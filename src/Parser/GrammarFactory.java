@@ -1,6 +1,5 @@
 package Parser;
 import Parser.Grammar.*;
-import Parser.Grammar.Number;
 
 public class GrammarFactory {
     private static GrammarFactory instance;
@@ -45,13 +44,6 @@ public class GrammarFactory {
         return new Identifier(identifier_name);
     }
 
-    public Expression getNumber(int value) {
-        return new Number(value);
-    }
-
-    public Expression getSensor(String consume, Direction direction) {
-        return new SensorExpression(consume,direction);
-    }
 
     public BlockStatment getBlock() {
         return new BlockStatment();

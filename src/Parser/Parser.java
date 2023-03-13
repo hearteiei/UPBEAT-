@@ -199,16 +199,16 @@ public class Parser {
     }
 
 
-    public Expression parseSensor() throws SyntaxError{
+    public Expression parseInfo() throws SyntaxError{
         Expression e;
         if(tkz.peek("virus")){
-            e= grammarFactory.getSensor(tkz.consume(),null);
+            e= grammarFactory.getinfo(tkz.consume(),null);
         }
         else if(tkz.peek("antibody")){
-            e = grammarFactory.getSensor(tkz.consume(),null);
+            e = grammarFactory.getinfo(tkz.consume(),null);
         }
         else if(tkz.peek("nearby")){
-            e =grammarFactory.getSensor(tkz.consume(),parseDirection());
+            e =grammarFactory.getinfo(tkz.consume(),parseDirection());
         }
         else{
             throw new SyntaxError();
