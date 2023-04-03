@@ -167,4 +167,5 @@ body {
 .btn_start:hover .btn_start_after {
     opacity: 1;
     transform: translate(0.3vw, 0.3vw);
+
 }
