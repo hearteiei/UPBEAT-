@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, NavLink, Routes, Route } from 'react-router-dom'
+
+// import pages
+import Home from './pages/Home'
+import Gameplay from './pages/Gameplay'
+import Member from './pages/Member'
+import Error from './pages/Error'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Wellcome to my App.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <nav>
+        {/* <NavLink end to="/">Home</NavLink>
+        <NavLink to="/gameplay">Start</NavLink>
+        <NavLink to="/member">Member</NavLink> */}
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/gameplay" element={<Gameplay />}></Route>
+        <Route path="/member" element={<Member />}></Route>
+        <Route path="*" element={<Error />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
